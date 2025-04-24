@@ -8,13 +8,13 @@ function StudentAdmin() {
         alert("hii" + sid);
         if(sid == '*'){
 
-            const response = await fetch("http://localhost:3005/admin/show");
+            const response = await fetch("https://student-app-znaw.onrender.com/admin/show");
             const res = await response.json();
             setStudent(res.msg);
             console.log(res.msg);
         }
         else{
-            const response = await fetch(`http://localhost:3005/admin/showByEmailId/${sid}`);
+            const response = await fetch(`https://student-app-znaw.onrender.com/admin/showByEmailId/${sid}`);
             const res = await response.json();
             setStudent(Array.isArray(res.msg)? res.msg : [res.msg]);
             console.log(Array.isArray(res.msg)? res.msg : [res.msg]);Array.isArray(res.msg)? res.msg : [res.msg]
@@ -23,7 +23,7 @@ function StudentAdmin() {
 
     async function deleteUser(email) {
         console.log(email)
-        const response = await fetch(`http://localhost:3005/admin/deleteByEmailId/${email}`,{
+        const response = await fetch(`https://student-app-znaw.onrender.com/admin/deleteByEmailId/${email}`,{
             method: 'DELETE'
         });
         const res = await response.json();

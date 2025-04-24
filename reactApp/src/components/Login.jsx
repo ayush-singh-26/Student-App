@@ -18,7 +18,7 @@ const Login = () => {
     }
     
     try {
-      const response = await fetch("http://localhost:8080/register", {
+      const response = await fetch("https://student-app-znaw.onrender.com/register", {
         method: "POST",
         body: JSON.stringify({ name, email, password }),
         headers: { "Content-Type": "application/json" },
@@ -47,7 +47,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/login", {
+      const response = await fetch("https://student-app-znaw.onrender.com/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" },
