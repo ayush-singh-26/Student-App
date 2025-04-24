@@ -4,7 +4,11 @@ const fs=require('fs').promises;
 const app=express();
 const port=8000;
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://student-app-1-uhbe.onrender.com',
+    credentials: true
+}));
+
 
 
 app.get("/",(req,res)=>{
